@@ -16,6 +16,7 @@ body {
     --color-white: #FFFFFF;
     --color-green: #31D0AA;
     --color-helper: #8E8F99;
+    --color-helpir: #757575;
 
     --taming-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -60,6 +61,8 @@ p {
 
 /*----------------- Navigetion ------------------*/
 
+
+/* Modal Window */
 .backdrop {
     position: fixed;
     top: 0;
@@ -87,7 +90,6 @@ p {
 
     transition: transform 250ms var(--taming-function);
 
-    height: 576px;
     width: 408px;
 
 
@@ -114,9 +116,133 @@ p {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 8px;
+
+    transition: background-color 250ms var(--taming-function),
+        box-shadow 250ms var(--taming-function)
+}
+
+.button-modal:active {
+    background-color: var(--color-cornflower);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.container-form-call {
+    width: 100%;
+}
+
+.subtitle-text-form {
+    font-weight: 700;
+    font-size: inherit;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+
+    margin-top: 72px;
+    margin-bottom: 16px;
+}
+
+.forms {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.text-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--color-helper);
+
+    padding: 0;
+    margin-bottom: 4px;
+}
+
+.sphere-input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--color-navy-blue);
+    border-radius: 4px;
+
+    padding: 0;
+    padding-left: 34px;
+    margin-top: 4px;
+    margin-bottom: 8px;
 }
 
 
+.sphere-input:focus {
+    border: 1px solid var(--color-iris);
+}
+
+.textarea-form {
+    display: block;
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    color: rgba(117, 117, 117, 0.5);
+
+
+    resize: none;
+
+    margin-top: 4px;
+    margin-bottom: 16px;
+    padding-top: 8px;
+    padding-left: 16px;
+}
+
+.svg-icon-form {
+    /* position: absolute; */
+}
+
+
+.textarea-form:focus {
+    border: 1px solid var(--color-iris);
+}
+
+
+.text-form {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.333333;
+    letter-spacing: 0.04em;
+    color: var(--color-helpir);
+}
+
+.text-privacy {
+    color: var(--color-iris);
+    text-decoration: none;
+}
+
+
+.button-form {
+    cursor: pointer;
+    width: 170px;
+    height: 51px;
+    background-color: var(--color-iris);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-color: transparent;
+    color: var(--color-white);
+
+    display: block;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    transition: background-color 250ms var(--taming-function),
+        box-shadow 250ms var(--taming-function)
+}
+
+.button-form:focus,
+.button-form:active {
+    background-color: var(--color-iris-active);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* End modal window */
 .header {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -219,7 +345,7 @@ p {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient( to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office\ .jpg");
+    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office\ .jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -278,9 +404,9 @@ p {
     border-radius: 4px;
     line-height: 1.5;
     border: 1px solid var(--color-cornflower);
-    transition: background 250ms var(--taming-function),
-    border 250ms var(--taming-function),
-    color 250ms var(--taming-function);
+    transition: background-color 250ms var(--taming-function),
+        border 250ms var(--taming-function),
+        color 250ms var(--taming-function);
 
 }
 
@@ -421,7 +547,7 @@ p {
     padding: 0;
 }
 
-.list_work > .list:not(:last-child) {
+.list_work>.list:not(:last-child) {
     margin-right: 24px;
 }
 
@@ -435,6 +561,8 @@ p {
     background-color: var(--color-white);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
+    transition: box-shadow 250ms var(--taming-function);
+
 }
 
 .user-list {
@@ -487,18 +615,18 @@ p {
     border: 1px solid var(--color-helper);
     border-radius: 4px;
     transition: color 250ms var(--taming-function),
-    border 250ms var(--taming-function);
+        border 250ms var(--taming-function);
     ;
 }
 
 
 .icon-svg-link-customers:hover,
-.icon-svg-link-customers:focus {    
+.icon-svg-link-customers:focus {
     color: var(--color-iris);
     border-color: var(--color-iris);
 }
 
-.icon-customers {   
+.icon-customers {
     fill: currentColor;
 }
 
@@ -545,8 +673,9 @@ p {
     line-height: 1.5;
     margin-bottom: 16px;
     color: var(--color-white);
-    
+
 }
+
 
 
 .icon-footer-svg {
@@ -572,31 +701,66 @@ p {
 }
 
 .icon-svg {
-    fill:var(--color-cloud);
+    fill: var(--color-cloud);
 }
 
 .container-subscibe {
     margin-left: 80px;
 }
 
+.form-mailto {
+    display: flex;
+}
+
+.input-mailto {
+    width: 264px;
+    height: 40px;
+    margin-right: 24px;
+    padding-left: 16px;
+    background-color: var(--color-navy-blue);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .form-button {
+    display: flex;
     font-weight: 700;
     line-height: 1.5;
     cursor: pointer;
     width: 168px;
     height: 40px;
+    padding: 0;
+    padding-top: 8px;
     padding-left: 24px;
-    padding-right: 64px;
     color: var(--color-white);
     background-color: var(--color-iris);
     border-color: transparent;
     border-radius: 4px;
+
+    transition: background-color 250ms var(--taming-function),
+        box-shadow 250ms var(--taming-function)
+}
+
+.form-button:hover,
+.form-button:focus {
+    background-color: var(--color-iris-active);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .form-button::after {
     content: '';
+    position: relative;
+    top: 0;
+    left: 16px;
+    width: 24px;
+    height: 24px;
     background-image: url('../images/decoretion/plane_send.svg');
+    background-repeat: no-repeat;
 }
+
+
 
 /*----------------- Protfolio ------------------*/
 
@@ -620,7 +784,7 @@ p {
 .text-item-efect {
     position: relative;
     overflow: hidden;
-    
+
 }
 
 .item-text {
@@ -642,7 +806,7 @@ p {
 
     transform: translateY(100%);
     transition: transform 250ms var(--taming-function),
-      opacity 250ms var(--taming-function);
+        opacity 250ms var(--taming-function);
 }
 
 .link-filter:hover .item-text,
@@ -665,8 +829,9 @@ p {
 
 .link-filter:hover,
 .link-filter:focus {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);;
-}       
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    ;
+}
 
 .container-card {
     padding: 32px 0 32px 16px;
